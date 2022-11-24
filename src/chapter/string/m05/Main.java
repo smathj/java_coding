@@ -2,11 +2,12 @@ package chapter.string.m05;
 
 import java.util.Scanner;
 
+
 // 단어 뒤집기
 public class Main {
 
-    public char[] solution(String text) {
-
+    public String solution(String text) {
+        String answer;
         char[] charArray = text.toCharArray();
 
         int from = 0;
@@ -16,30 +17,31 @@ public class Main {
             char left = charArray[from];
             char right = charArray[to];
 
-            char tmp = charArray[from];
-
             String start = String.valueOf(left);
             String end = String.valueOf(right);
 
-            if(start.matches("^[a-zA-z]]*$") && end.matches("^[a-zA-z]]*$")) {
-                // 원본데이터 수정시키기
+            if(!start.matches("^[a-zA-z]]*$")) {
+//            if(!Character.isAlphabetic(left)) {
+                from++;
+            } else if(!end.matches("^[a-zA-z]]*$")) {
+//            } else if(!Character.isAlphabetic(right)) {
+                to--;
+            } else {
+                char tmp = charArray[from];
                 charArray[from] = charArray[to];
                 charArray[to] = tmp;
-            } else {
+                from++;
+                to--;
             }
-            from++;
-            to--;
-//            answer.add()
         }
-        return charArray;
+        answer = String.valueOf(charArray);
+        return answer;
     }
 
     public static void main(String[] args) {
         Main T = new Main();
         Scanner kb = new Scanner(System.in);
-        String text = kb.nextLine();
-        if(text.length() < 100) {
+        String text = kb.next();
         System.out.println(T.solution(text));
-        }
     }
 }
