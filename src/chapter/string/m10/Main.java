@@ -1,59 +1,83 @@
 package chapter.string.m10;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-// x >= 48 && x <= 57 <- 0 ~ 9 ( char ) 아스키넘버
+
 class Main {
-    public String solution(String param){
-        //int answer=0;
-        String baseText = param.split(" ")[0];
-        String flag = param.split(" ")[1];
-
+    public String solution(String param, String flag){
+        String[] baseTextArr = param.split("");
         StringBuilder result = new StringBuilder();
-        int index1 = 0;
-        int index2 = 0;
 
-         List<Boolean> locationIndex = new ArrayList<>();
-         List<Integer> locationOutput = new ArrayList<>();
-        for (int i = 0; i < baseText.length(); i++) {
-            if (flag.equals(String.valueOf(baseText.charAt(i)))) {
-                locationIndex.add(true);
-            } else {
-                locationIndex.add(false);
-            }
-        }
-        System.out.println("locationIndex = " + locationIndex);
+        List<String> textList = Arrays.asList(baseTextArr);
 
-        for (int i = 0; i < locationIndex.size(); i++) {
-            // 1. 내가 true일때
-            if(locationIndex.get(i)) {
-                result.append("0 ");
+        for (int i = 0; i < baseTextArr.length; i++) {
+            String nowText = baseTextArr[i];
+            int endIndex = baseTextArr.length -1;
+            int minLeftNum = 1;
+            int minRightNum = 1;
+            boolean left = false;
+            boolean right = false;
+
+            // 바로일치
+            if (flag.equals(nowText)) {
+//                System.out.println("minLeftNum :" + minLeftNum + ", minRightNum :" + minRightNum + ", left : " + left + ", right : " + right );
+                result.append(0);
                 continue;
             }
 
-            // 2. 내왼쪽 또는 오른쪽이 true일때  ( 단 왼쪽은 최소 인덱스 0, 오른쪽 최대 인덱스 마지막 인덱스 )
-            if((i-1 < 0 ) && locationIndex.get(i-1)) {
 
+            // 왼쪽으로 탐색
+            while (i - minLeftNum >= 0) {
+                if (flag.equals(baseTextArr[i - minLeftNum])) {
+//                    result.append((minLeftNum) + " ");
+                    left = true;
+                    break;
+                } else {
+                    minLeftNum += 1;
+                }
             }
 
-            // 2. 내왼쪽 또는 오른쪽이 true일때  ( 단 왼쪽은 최소 인덱스 0, 오른쪽 최대 인덱스 마지막 인덱스 )
-            if((i-1 < 0 ) && locationIndex.get(i-1)) {
-
+            // 오른쪽으로 탐색
+            while(i + minRightNum <= endIndex) {
+                if (flag.equals(baseTextArr[(i + minRightNum)])) {
+                    right = true;
+                    break;
+                } else {
+                    minRightNum += 1;
+                }
             }
 
+//            System.out.println("minLeftNum :" + minLeftNum + ", minRightNum :" + minRightNum + ", left : " + left + ", right : " + right );
 
+            // 왼쪽으로만 탐색한경우
+            if(left == true && right == false) {
+                result.append(minLeftNum);
+            // 오른쪽으로만 탐색한경우
+            } else if(left == false && right == true) {
+                result.append(minRightNum);
+            // 양방향으로 탐색한경우
+            } else {
+                int min = minLeftNum >= minRightNum ? minRightNum : minLeftNum;
+                result.append(min);
+            }
         }
 
 
-        return "";
+
+        return result.toString();
     }
 
     public static void main(String[] args){
         Main T = new Main();
         Scanner kb = new Scanner(System.in);
-        String str=kb.nextLine();
-        System.out.print(T.solution(str));
+        String str=kb.next();
+        String flag=kb.next();
+        String[] strArr = T.solution(str,flag).split("");
+        for (String text : strArr) {
+            int x = Integer.parseInt(text);
+            System.out.print(x+" ");
+        }
     }
 }
