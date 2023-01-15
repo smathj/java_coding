@@ -1,0 +1,5 @@
+문자열에서 특정 문자를 가지고 제일 짧은거리 구하기
+
+babbaaabbababababab vs a
+
+0111000 ...
