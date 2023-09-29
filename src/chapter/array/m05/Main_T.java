@@ -9,6 +9,7 @@ public class Main_T {
 
         int[] ch = new int[n+1];
 
+        // 1 부터 돌필요는 없으므로
         for(int i=2; i<=n; i++){
 
             // 1이 아니라면 처음 만난 수다 -> 카운팅
