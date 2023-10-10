@@ -43,32 +43,41 @@ public class Main {
 
 	}
 
+	// v2. 강의보고 재도전
+	public void solution2(int n, int m, int[] arr){
+		// 포문으로 rt를 전진시킨다
+		// 현재 rt 값을 누적한다
+		// sum이 m일떄 answer를 카운팅 한다
+		// 누적된 sum이 m 보다 같거나 크면 후처리를 한다
+		// 누적된 sum에서 lt 값을 뺀다 (맨앞 인덱스값)
+		// 그다음 lt값을 증가시킨다 (인덱스용)
+		// 만약 감소시킨 sum 값이 m 이라면 카운팅한다
 
-	// v2. while
-//	public void solution2(int n, int m, int[] arr){
-//
-//		int count = 0;
-//		int p1 = 0;
-//		int p2 = 0;
-//		int sum = 0;
-//		while (p1 < n && p2 < n && sum != m) {
-//
-//			int i = arr[p1] + arr[p2++];
-//			if (sum == m) {
-//				count++;
-//			}
-//		}
-//
-//		for (int i = 0; i < n; i++) {
-//			int i1 = arr[i];
-//			while (sum != m) {
-//			}
-//
-//		}
-//
-//		System.out.println(count);
-//
-//	}
+		int sum = 0;
+		int count = 0;
+		int lt = 0;
+
+		for (int rt = 0; rt < n; rt++) {
+
+			sum += arr[rt];
+
+			if(sum == m) count++;
+
+			while (sum >= m) {
+
+				sum = sum - arr[lt++];
+
+				if(sum == m) count++;
+			}
+
+		}
+
+		System.out.println(count);
+
+
+	}
+
+
 	public static void main(String[] args){
 		Main T = new Main();
 
@@ -83,6 +92,7 @@ public class Main {
 		}
 
 
-		T.solution(n, m, a);
+//		T.solution(n, m, a);
+		T.solution2(n, m, a);
 	}
 }
