@@ -11,19 +11,40 @@ import java.util.Scanner;
 public class Main {
 
 
-	// v1.
 	public void solution(int n, int m, int[] arr){
 
-		int kCount = 0;
-		int maxSize = 1;
-		int windowSize = 1;
-		for (int i = 1; i < n; i++) {
+		int max = 0;
 
-			while(windowSize < n) {
+		for (int i = 0; i < n; i++) {
 
+			int sum = arr[i];
+			int zeroCount = 0;
+			if (sum == 0) {
+				zeroCount++;
 			}
+			int mv = i+1;
 
+			while(mv < n && zeroCount <= m + 1) {
+				int v = arr[mv];
+				if (v == 0) {
+					zeroCount++;
+				}
+				sum += v;
+				mv++;
+
+				if(zeroCount == m+1) {
+					sum = sum + m;
+
+					max = Math.max(max, sum);
+//					if (sum > max) {
+//						max = sum;
+//					}
+					break;
+				}
+			}
 		}
+
+		System.out.println(max);
 
 
 	}
