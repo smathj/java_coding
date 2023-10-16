@@ -1,5 +1,6 @@
 package chapter.hashmap_treeset.m01;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 /*
@@ -9,15 +10,23 @@ import java.util.Scanner;
 8
  */
 public class Main_T {
-	public int solution(int n, int k, int[] arr){
-		int answer=0, cnt=0, lt=0;
-		for(int rt=0; rt<n; rt++){
-			if(arr[rt]==0) cnt++;
-			while(cnt>k){
-				if(arr[lt]==0) cnt--;
-				lt++;
+	public char solution(int n, String s){
+		char answer=' ';
+		HashMap<Character, Integer> map=new HashMap<>();
+		for(char x : s.toCharArray()){
+			map.put(x, map.getOrDefault(x, 0)+1);
+		}
+		//System.out.println(map.containsKey('F'));
+		//System.out.println(map.size());
+		//System.out.println(map.remove('C'));
+
+		int max=Integer.MIN_VALUE;
+		for(char key : map.keySet()){
+			//System.out.println(key+" "+map.get(key));
+			if(map.get(key)>max){
+				max=map.get(key);
+				answer=key;
 			}
-			answer=Math.max(answer, rt-lt+1);
 		}
 		return answer;
 	}
@@ -26,11 +35,7 @@ public class Main_T {
 		Main_T T = new Main_T();
 		Scanner kb = new Scanner(System.in);
 		int n=kb.nextInt();
-		int k=kb.nextInt();
-		int[] arr=new int[n];
-		for(int i=0; i<n; i++){
-			arr[i]=kb.nextInt();
-		}
-		System.out.print(T.solution(n, k, arr));
+		String str=kb.next();
+		System.out.println(T.solution(n, str));
 	}
 }
