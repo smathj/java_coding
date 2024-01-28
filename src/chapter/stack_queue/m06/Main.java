@@ -15,44 +15,21 @@ public class Main {
 
 
     public void solution(Queue<Integer> que, Integer keyword) {
-
-        System.out.println("que = " + que);
-        System.out.println("keyword = " + keyword);
-
-
-        int pollCount = 0;
-        int resultSize = 0;
-
-
-
-
-
-        // 게임횟수는 1명만 남겨야하니 전체인원 -1 회 진행
-        int queSize = que.size();
-        int testSize = que.size();
-        for (int k = 0; k < queSize - 1; k++) {
-            Queue<Integer> saveQue = new LinkedList<>();
-
-            for (int i = 0; i < testSize; i++) {
-
-                Integer poll = k == 0 ? que.poll() : saveQue.poll();
-                int roopCount = i + 1;
-                System.out.println("외치는 숫자 = " + roopCount + ", 왕자번호 = " + poll);
-
-                if (roopCount != keyword) {
-                    saveQue.offer(poll);
-                } else {
-                    System.out.println("⬆️ 제거");
+//        System.out.println("que = " + que);
+//        System.out.println("keyword = " + keyword);
+        while (que.size() != 1) {
+//            System.out.println("[while] que = " + que);
+            for (int pollCount = 1; pollCount <= keyword; pollCount++) {
+                Integer princeNum = que.poll(); // 왕자 하나 꺼낸다(꺼내는 횟수가 왕자의 순서)
+                if (pollCount != keyword) {
+                    que.offer(princeNum);
                 }
-
             }
-            testSize = saveQue.size();
-
-
         }
-
-
+//        System.out.println("[end] que = " + que);
+        System.out.println(que.poll());
     }
+
 
     public static void main(String[] args) {
         Main T = new Main();
