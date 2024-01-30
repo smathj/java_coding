@@ -36,6 +36,8 @@ class Main_T {
         }
         while (!Q.isEmpty()) {
             Person tmp = Q.poll();
+
+            // ! 반복문의 큐의 요소를 poll 하지 않고 값만 읽는다
             for (Person x : Q) {
                 if (x.priority > tmp.priority) {
                     Q.offer(tmp);

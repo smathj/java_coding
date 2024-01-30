@@ -14,16 +14,14 @@ public class Test {
         System.out.println("saveQue = " + saveQue);
 
 
-
-        try {
-            List<Integer> l1 = Arrays.asList(1, 2, 3, 4, 5, 6);
-            System.out.println("l1 = " + l1);
-            l1.remove(1);
-            System.out.println("l1 = " + l1);
-
-        } catch(Exception e) {
-            e.printStackTrace();
+        System.out.println("saveQue = " + saveQue);
+        System.out.println();
+        for (Integer i : saveQue) {
+            System.out.println("i = " + i);
         }
+        System.out.println();
+        System.out.println("saveQue = " + saveQue);
+
 
     }
 }
