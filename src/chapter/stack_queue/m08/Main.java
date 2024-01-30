@@ -23,6 +23,8 @@ public class Main {
      * 전반적인 아이디어
      * poll 하고 offer 를 한다면 x 축 평행이동
      * poll 만 한다면 전체사이즈 -1 해서 초기화
+     *
+     * 뭔가 맵이라든가 클래스로 객체 시킬 수 있을 건데, pure 하게 품
      */
     public void solution(int[] memberArr, int index) {
 
