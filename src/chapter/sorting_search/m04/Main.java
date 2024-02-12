@@ -1,7 +1,5 @@
 package chapter.sorting_search.m04;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 
@@ -20,37 +18,40 @@ public class Main {
 
         int[] memoryArr = new int[memorySize];
 
-        System.out.println("memorySize = " + memorySize);
-        System.out.println("memoryArr = " + Arrays.toString(memoryArr));
-        System.out.println("arr = " + Arrays.toString(arr));
-
-        System.out.println();
-        System.out.println();
-
-
         for (int i = 0; i < arr.length; i++) {
 
-            //
+            int findIdx = -1;
 
-            int index = i;
-            System.out.println("[전] index = " + index);
-            if(index >= memorySize) {
-                index = index - memorySize + 1;
-                System.out.println("[후] index = " + index);
+            for (int j = 0; j < memoryArr.length; j++) {
+                if (arr[i] == memoryArr[j]) {
+                    findIdx = j;
+                }
             }
 
+            // 캐쉬 미스
+            if (findIdx == -1) {
+                // memoryArr 을 하나씩 뒤로 민다
+                // 뒤에서 떙긴다,
+                for (int j = memoryArr.length - 1; j >= 1; j--) {
+                    memoryArr[j] = memoryArr[j - 1];
+                }
 
-
-
-
-
-            System.out.println(Arrays.toString(memoryArr));
-            System.out.println();
-
+            // 캐쉬 히트
+            } else {
+                // 찾은거 기준으로 뒤에서 땡긴다, findIdx 뒤로는 건들면 안된다
+                for (int j = findIdx; j >= 1; j--) {
+                    memoryArr[j] = memoryArr[j - 1];
+                }
+            }
+            memoryArr[0] = arr[i];
 
 
         }
 
+
+        for (int i = 0; i < memoryArr.length; i++) {
+            System.out.print(memoryArr[i] + " ");
+        }
 
 
     }
