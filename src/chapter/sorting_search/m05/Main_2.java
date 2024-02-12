@@ -26,7 +26,10 @@ public class Main_2 {
 
         // 이웃한 항끼리 비교한다
         for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i] == arr[i + 1]) result = "D";
+            if (arr[i] == arr[i + 1]) {
+                result = "D";
+                break;
+            }
         }
         System.out.println(result);
 
