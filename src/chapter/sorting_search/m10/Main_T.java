@@ -29,11 +29,21 @@ public class Main_T {
 
 	public int solution(int n, int c, int[] arr){
 		int answer=0;
+
+		// x축 좌표니까, 오름 차순으로 정렬한다
 		Arrays.sort(arr);
+
+		// 최소
 		int lt=1;
+
+		// 최대
 		int rt=arr[n-1];
+
+
 		while(lt<=rt){
+			// 두 마구간의 거리
 			int mid=(lt+rt)/2;
+
 			if(count(arr, mid)>=c){
 				answer=mid;
 				lt=mid+1;
