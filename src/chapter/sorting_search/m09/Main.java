@@ -1,8 +1,6 @@
 package chapter.sorting_search.m09;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 /*
@@ -29,62 +27,75 @@ import java.util.stream.Stream;
 public class Main {
 
 
+    /**
+     * 한장당 DVD 사이즈와, 곡 정보를 받아서
+     * 그 조건에 맞는 실제 필요한 DVD 갯수를 리턴한다
+     */
+    public static int count(int dvdSize, int[] arr) {
+        int requireDvdCount = 1;
+        int sum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            if (sum + arr[i] <= dvdSize) {
+                sum += arr[i];
+            } else {
+                requireDvdCount++;
+                sum = arr[i];
+            }
+
+        }
+
+//        System.out.println("requireDvdCount = " + requireDvdCount);
+
+        return requireDvdCount;
+
+    }
 
     public void solution(int musicCount, int dvdCount, int[] arr) {
 
-//        System.out.println("musicCount = " + musicCount);
-//        System.out.println("dvdCount = " + dvdCount);
+//        System.out.println("음악 갯수 = " + musicCount);
+//        System.out.println("디비디 갯수 = " + dvdCount);
 //        System.out.println(Arrays.toString(arr));
 
+        int lt = Arrays.stream(arr).max().getAsInt();
+        int rt = Arrays.stream(arr).sum();
 
-        int sum = 0;
-        for (int i = 0; i < arr.length; i++) sum += arr[i];
-//        System.out.println("전체 뮤직 시간 총합 = " + sum);
-        System.out.println("전체 노래시간을 DVD 갯수로 나누었을때 한 DVD 당 최소 시간 = " + sum / dvdCount);
-        int maxTime = sum / dvdCount;
-
-        ArrayList<Integer> timeList = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++) timeList.add(arr[i]);
-
-//        Collections.sort(timeList, (o1, o2) -> o2 - o1);
-//        System.out.println(timeList);
-
-        List<Integer> maxList = new ArrayList<>();
-        int result = 0;
+//        System.out.println("lt = " + lt);
+//        System.out.println("rt = " + rt);
 
 
+        // 9 ~ 45
+        int answer = 0;
 
-
-        a: for (int lt = 0; lt < timeList.size() - 1; lt++) {
-
-            int lv = timeList.get(lt);
-            System.out.println("[lv] = " + lv);
-            int roopSum = lv;
-
-            b: for (int rt = lt+1; rt < timeList.size(); rt++) {
-
-                int rv = timeList.get(rt);
-                System.out.println("rv = " + rv);
-                roopSum += rv;
-
-                if (roopSum > maxTime) {
-//                    if(rt != timeList.size() -1) roopSum -= rv;
-                    lt = rt -1;
-//                    lt = rt;
-//                    lt = rt + 1;
-                    maxList.add(roopSum);
-                    System.out.println("[break] roopSum = " + roopSum);
-                    continue a;
-                }
+        while (lt <= rt) {
+//            System.out.println("==================================");
+//            System.out.println("lt = " + lt);
+//            System.out.println("rt = " + rt);
+            int mid =( lt + rt) / 2;  // 1개의 dvd 용량
+//            System.out.println("mid = " + mid);
+            // dvd 카운트 보다 작거나 같을때 -> 아~, 용량을 더 줄여도 되겠네
+            if (count(mid, arr) <= dvdCount) {
+                answer = mid;
+                rt = mid -1;
+            // dvd 갯수를 넘어 슬때 -> 아~ 용량을 더 키워야겠구나
+            } else {
+                lt = mid + 1;
             }
-            System.out.println();
+//            System.out.println("answer = " + answer);
+//            System.out.println("==================================");
+//            System.out.println();
+//            System.out.println();
         }
 
-        System.out.println("maxList = " + maxList);
-//        System.out.println(result);
+//        System.out.println("answer = " + answer);
 
-        Integer i = maxList.stream().min((o1, o2) -> o1 - o2).get();
-        System.out.println(i);
+
+
+        System.out.println(answer);
+
+
+
 
 
 
