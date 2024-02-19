@@ -14,6 +14,7 @@ public class Main_T {
 
 
     public static int[] getAlphabetCountArray(String str) {
+        // 0 으로 영역 전개
         int[] count = new int[26];
         for (int i = 0; i < str.length(); i++)
             count[str.charAt(i) - 'a']++;

@@ -9,8 +9,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-        int x = (int) Math.ceil((double)17 / (double) 2);
-        System.out.println(x);
+        System.out.println(1 % 2);
 
 
     }
