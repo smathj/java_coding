@@ -17,10 +17,10 @@ public class Main_T2 {
         for (int i = 0; i < charArray.length; i++) {
             // 대문자인 경우
             if ('A' <= charArray[i] && charArray[i] <= 'Z') {
-                charArray[i] = (char) ('a' + charArray[i] - 'A');
+                charArray[i] = (char) ('a' + (charArray[i] - 'A'));
             // 소문자인 경우
             } else {
-                charArray[i] = (char) ('A' + charArray[i] - 'a');
+                charArray[i] = (char) ('A' + (charArray[i] - 'a'));
             }
         }
         System.out.println(charArray);
