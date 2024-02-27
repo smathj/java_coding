@@ -15,7 +15,7 @@ zZa
 Z
 
  */
-public class Main2 {
+public class Main_T {
 
 
     public static void solve(String param) {
@@ -60,7 +60,6 @@ public class Main2 {
 
         Scanner scanner = new Scanner(System.in);
         String param1 = scanner.next().toUpperCase();
-//        String param1 = scanner.next();
         solve(param1);
 
     }

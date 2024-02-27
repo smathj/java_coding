@@ -9,7 +9,13 @@ public class Test {
 
     public static void main(String[] args) {
 
-        System.out.println(1 % 2);
+        String input = "abcdddae";
+
+        int i = input.indexOf("a", 0);
+        System.out.println("i = " + i);
+
+        int i2 = input.indexOf("a", 4);
+        System.out.println("i2 = " + i2);
 
 
     }

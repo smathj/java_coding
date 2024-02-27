@@ -28,7 +28,6 @@ public class Main {
             map.put(c.toUpperCase(), map.getOrDefault(c.toUpperCase(), 0) + 1);
         }
 
-//        System.out.println(map);
 
         Set<String> keySet = map.keySet();
         Collection<Integer> values = map.values();
@@ -36,14 +35,12 @@ public class Main {
         int max = 0;
         int duCnt = 0;
         String result = null;
-
         String[] keyArr = keySet.toArray(new String[keySet.size()]);
         Integer[] valueArr = values.toArray(new Integer[keySet.size()]);
 
 
         for (int i = 0; i < valueArr.length; i++) {
             Integer value = valueArr[i];
-//            System.out.println("value = " + value);
             if (value >= max) {
                 if (value == max) duCnt++;
                 max = value;
@@ -51,12 +48,6 @@ public class Main {
             }
         }
 
-//        System.out.println();
-//        System.out.println();
-//        System.out.println("max = " + max);
-//        System.out.println("duCnt = " + duCnt);
-//        System.out.println();
-//        System.out.println();
 
         if (duCnt > 0) {
             System.out.println("?");
