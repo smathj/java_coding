@@ -1,21 +1,37 @@
 package chapter.fastcampus.part1.string.m07;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 
 /*
------------------------------------------------
-6 4
-4 1
-8
+----------------------------------------------------------------
+4 4
+....
+....
+....
+....
 
-0 1
------------------------------------------------
-6 4
-5 3
 4
+----------------------------------------------------------------
 
-3 1
+3 5
+XX...
+.XX..
+...XX
+
+0
+----------------------------------------------------------------
+5 8
+....XXXX
+........
+XX.X.XX.
+........
+........
+
+3
+----------------------------------------------------------------
+
  */
 public class Main_T {
 
@@ -28,6 +44,8 @@ public class Main_T {
         for (int i = 0; i < N; i++)
             map[i] = sc.next().toCharArray();
 
+//        System.out.println(Arrays.deepToString(map));
+
         boolean[] rowExist = new boolean[N];
         boolean[] colExist = new boolean[M];
         for (int i = 0; i < N; i++)
@@ -36,6 +54,9 @@ public class Main_T {
                     rowExist[i] = true;
                     colExist[j] = true;
                 }
+
+//        System.out.println(Arrays.toString(rowExist));
+//        System.out.println(Arrays.toString(colExist));
 
         int rowNeedCount = N;
         int colNeedCount = M;
