@@ -1,7 +1,5 @@
 package chapter.fastcampus.part1.string.m07;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -44,31 +42,40 @@ public class Main {
         int n = scanner.nextInt();  // 행
         int m = scanner.nextInt();  // 열
 
-        System.out.println();
-
-        System.out.println("행(n) = " + n);
-        System.out.println("열(m) = " + m);
-        boolean[][] arr = new boolean[m][n];
-
-        System.out.println();
-        System.out.println("처음\n" + Arrays.deepToString(arr));
-        System.out.println();
-
-        // 행 3
-        for (int roopN = 0; roopN < n; roopN++) {
-            String next = scanner.next();
-            System.out.println("next = " + next);
-            // 열 5
-            for (int roopM = 0; roopM < m; roopM++) {
-
-            }
-            System.out.println();
+        char[][] charArr = new char[n][m];
+        for (int i = 0; i < n; i++) {
+            charArr[i] = scanner.next().toCharArray();
         }
-        System.out.println();
 
-        System.out.println("이후\n" + Arrays.deepToString(arr));
+//        System.out.println(Arrays.deepToString(charArr));
+
+        // 행의 갯수 길이를 가진 배열
+        boolean[] rowExistArr = new boolean[n];
+        // 열의 갯수 길이를 가진 배열
+        boolean[] colExistArr = new boolean[m];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (charArr[i][j] == 'X') {
+                    rowExistArr[i] = true;
+                    colExistArr[j] = true;
+                }
+            }
+        }
+
+        // 기본 사이즈로 두고 가감한다
+        int needRowCount = n;
+        int needColCount = m;
 
 
+        for (int i = 0; i < n; i++) {
+            if(rowExistArr[i]) needRowCount--;
+        }
+        for (int j = 0; j < m; j++) {
+            if(colExistArr[j]) needColCount--;
+        }
+
+        System.out.println(Math.max(needRowCount, needColCount));
 
     }
 
