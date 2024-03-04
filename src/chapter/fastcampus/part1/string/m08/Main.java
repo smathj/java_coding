@@ -44,15 +44,16 @@ public class Main {
 */
         // v2
         a:
-        for (int i = 1; i <= banCount; i++) {
+        for (int i = 0; i < banCount; i++) {
             Integer[] temp = new Integer[20];
+            int ban = scanner.nextInt();
             b:
-            for (int j = 0; j <= 20; j++) {
-                System.out.println("(i,j) = " + "(" + i + "," + j + ")");
+            for (int j = 0; j < 20; j++) {
+//                System.out.println("(i,j) = " + "(" + i + "," + j + ")");
                 int val = scanner.nextInt();
-                if (j > 0) temp[j - 1] = val;
+                temp[j ] = val;
             }
-            map.put(i, temp);
+            map.put(ban, temp);
         }
 
         List<Integer> banList = new ArrayList<>(map.keySet());
