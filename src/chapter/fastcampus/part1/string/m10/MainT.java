@@ -45,15 +45,13 @@ public class MainT {
             int pairValue = X - a[i];
 
             // 범위 체크
-            if(0 <= pairValue && pairValue <= 1000000)
+            if(0 <= pairValue && pairValue <= 100000)
                 // 값을 인덱스로하는 배열에 존재하면 된다
                 ans += exist[pairValue] ? 1 : 0;
         }
 
-        /*
-        문제에서 서로 다른 자연수라했으니
-        i,j 가 뒤집힌 j,i 순서쌍을 제외하기 위해서 2로 나누기만 하면된다
-         */
+//        문제에서 서로 다른 자연수라했으니
+//        i,j 가 뒤집힌 j,i 순서쌍을 제외하기 위해서 2로 나누기만 하면된다
         System.out.println(ans / 2);
 
 
