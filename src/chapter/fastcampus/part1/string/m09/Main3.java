@@ -33,7 +33,7 @@ import java.util.Scanner;
 ----------------------------------------------------------------
 
  */
-public class Main2 {
+public class Main3 {
 
     public static void main(String[] args) throws IOException {
 
@@ -41,24 +41,33 @@ public class Main2 {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
 
-        Scanner scanner = new Scanner(System.in);
-
         int size = Integer.parseInt(br.readLine());
-        int[] arr = new int[size];
+        // 인덱스가 숫자이고
+        // 그떄의 값이 갯수이다
+        int[] arr = new int[10001];
 
+
+        // 입력
         for (int i = 0; i < size; i++) {
-            arr[i] = Integer.parseInt(br.readLine());
+            int valueAndIndex = Integer.parseInt(br.readLine());
+//            System.out.println("valueAndIndex = " + valueAndIndex);
+            arr[valueAndIndex]++;
         }
 
-        // 정렬 - 날먹
-        Arrays.sort(arr);
+        // 정렬
+//        System.out.println(Arrays.toString(arr));
 
-        for (int i : arr) {
-            bw.write(i + "\n");
 
+        // 출력
+        for (int i = 1; i <= 10000; i++) {
+            while (arr[i]-- > 0) {
+                bw.write(i + "\n");
+            }
         }
-
         bw.flush();
+
+
+
 
     }
 
