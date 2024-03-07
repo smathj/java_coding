@@ -6,14 +6,9 @@ public class Test {
 
     public static void main(String[] args) {
 
-        List<Integer> list = new ArrayList<>();
+        System.out.println(59 % 16);    // 나머지 11
+        System.out.println(59 / 16);    // 몫 3
 
-        list.add(1);
-        list.add(2);
-        list.add(3);
-
-        list.add(0, 10);
-        System.out.println("list = " + list);
 
     }
 }
