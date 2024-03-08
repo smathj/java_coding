@@ -6,18 +6,12 @@ public class Test {
 
     public static void main(String[] args) {
 
+        int[] arr1 = {1, 2, 3, 4, 5};
+        int[] arr2 = arr1.clone();
+        arr2[4] = 10;
 
-        int i;
-        int k;
-        for (i = 0; i < 10; i++) {
-        }
-        for (k = 0; k < 10; k++) {
-            if(k == 9) break;
-        }
-
-        System.out.println("이후");
-        System.out.println("i = " + i);
-        System.out.println("k = " + k);
+        System.out.println(Arrays.toString(arr1));
+        System.out.println(Arrays.toString(arr2));
 
     }
 }
