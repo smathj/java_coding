@@ -15,20 +15,19 @@ import java.util.Scanner;
 
 
  */
-public class SeqSearchSen {
+public class SeqSearchSenFor {
 
     public static int seqSearchSen(int[] a, int n, int key) {
 
-        int i = 0;
 
         // 보초
         a[n] = key;
 
-        while (true) {
+        int i;
+        for (i = 0; i <= n; i++) {
             if (a[i] == key) {
                 break;
             }
-            i++;
         }
 
         // 보초로서 검색 성공한거면 -1, 아니면 i
