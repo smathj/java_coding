@@ -39,7 +39,7 @@ public class InsertionSort {
         }
 
         // 1, 배열, 2, 총갯수
-        insertionSort(arr, n);      // 배열 x 를 버블정렬
+        insertionSort(arr, n);      // 배열 x 를 정렬
 
         System.out.println("오름차순으로 정렬했습니다");
         for (int i = 0; i < n; i++) {
