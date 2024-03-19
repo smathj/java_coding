@@ -6,7 +6,14 @@ public class Test {
 
     public static void main(String[] args) {
 
-        System.out.println(9/12);
-        System.out.println(9%12);
+        String text = "가가가 나나 다다 라 마마마마 바 사";
+        StringTokenizer stringTokenizer = new StringTokenizer(text);
+
+        while (stringTokenizer.hasMoreTokens()) {
+            String token = stringTokenizer.nextToken();
+            System.out.println("token = " + token);
+
+        }
+
     }
 }
