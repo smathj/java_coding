@@ -6,13 +6,23 @@ public class Test {
 
     public static void main(String[] args) {
 
-        String text = "가가가 나나 다다 라 마마마마 바 사";
-        StringTokenizer stringTokenizer = new StringTokenizer(text);
+        char c = 'A';
+        System.out.println(c);
+        System.out.println((int) c);
 
-        while (stringTokenizer.hasMoreTokens()) {
-            String token = stringTokenizer.nextToken();
-            System.out.println("token = " + token);
+        String[] valueArr = new String[36];
 
+        for (int i = 0; i < 36; i++) {
+            if (i >= 10) {
+                valueArr[i] = String.valueOf((char) (65 + i - 10));
+            } else {
+                valueArr[i] = String.valueOf(i);
+            }
+        }
+
+        for (int i = 0; i < valueArr.length; i++) {
+            String text = valueArr[i];
+            System.out.println("text = " + text);
         }
 
     }
