@@ -1,6 +1,9 @@
 package chapter.fastcampus.part1.bruteforce.m02;
 
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
 /*
@@ -16,7 +19,7 @@ import java.util.Scanner;
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 
         Scanner sc = new Scanner(System.in);
@@ -38,6 +41,7 @@ public class Main {
 
 //        System.out.println(Arrays.toString(arr));
 
+        BufferedWriter bf = new BufferedWriter(new OutputStreamWriter(System.out));
         for (int q = 0; q < N; q++) {
             int testValue = testArr[q];
 
@@ -57,12 +61,13 @@ public class Main {
                 }
             }
             if(flag) {
-                System.out.println("1");
+                bf.write("1" + "\n");
             } else {
-                System.out.println("0");
+                bf.write("0" + "\n");
             }
 
         }
+        bf.flush();
 
 
     }
