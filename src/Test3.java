@@ -1,14 +1,16 @@
+import java.util.Arrays;
+
 public class Test3 {
 
     public static void main(String[] args) {
 
+        int[] arr = {1, 2, 3, 4, 5,};
 
-        System.out.println(256/17);
-        System.out.println(256%17);
+        int[] arr2 = arr.clone();
 
-        System.out.println();
+        arr[0] = 100;
 
-        System.out.println((256/17)/ 17);
-        System.out.println((256/17)% 17);
+        System.out.println(Arrays.toString(arr2));
+
     }
 }
