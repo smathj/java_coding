@@ -6,8 +6,11 @@ import java.util.Scanner;
 public class Main_T {
 
     public static int calcScore(char[][] map) {
+
         int N = map.length;
         int maxScore = 0;
+
+        //! → → → → 방향 (전체 행)
         // 가장 긴 연속 column 길이 찾기
         for (int r = 0; r < N; r++) {
             int scr = 1;
@@ -20,6 +23,9 @@ public class Main_T {
             }
             maxScore = Math.max(maxScore, scr);
         }
+
+
+        //! ↓ ↓ ↓ ↓ 방향 (전체 열)
         // 가장 긴 연속 row 길이 찾기
         for (int c = 0; c < N; c++) {
             int scr = 1;
@@ -32,6 +38,7 @@ public class Main_T {
             }
             maxScore = Math.max(maxScore, scr);
         }
+
         return maxScore;
     }
 
@@ -50,20 +57,25 @@ public class Main_T {
 
         int ans = 0;
         for (int i = 0; i < N; i++)
+
             for (int j = 0; j < N; j++){
+
                 // swap right
                 if (j + 1 < N) {
                     swapCandy(map, i, j, i, j + 1);
                     ans = Math.max(ans, calcScore(map));
                     swapCandy(map, i, j, i, j + 1);
                 }
+
                 // swap below
                 if (i + 1 < N) {
                     swapCandy(map, i, j, i + 1, j);
                     ans = Math.max(ans, calcScore(map));
                     swapCandy(map, i, j, i + 1, j);
                 }
+
             }
+
         System.out.println(ans);
     }
 

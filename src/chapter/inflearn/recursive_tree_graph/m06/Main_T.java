@@ -12,6 +12,7 @@ public class Main_T {
         if (L == n + 1) {
             String tmp = "";
             for (int i = 1; i <= n; i++) {
+                // 인덱스를 출력할거다
                 if (ch[i] == 1) tmp += (i + " ");
             }
             if (tmp.length() > 0) System.out.println(tmp);
