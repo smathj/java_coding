@@ -30,6 +30,9 @@ public class Main_T {
     }
 
 
+    /**
+     * 큐를 이용해서 이진 트리를 순회 하는 방법 새롭다...
+     */
     public void BFS(Node root) {
         Queue<Node> Q = new LinkedList<>();
         // 최초에 루트 노드를 넣음

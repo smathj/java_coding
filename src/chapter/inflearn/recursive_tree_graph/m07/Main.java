@@ -44,5 +44,4 @@ public class Main {
         node2.levelPrint(node3);    // 레벨 3 탐색
 
     }
-
 }
