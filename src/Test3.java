@@ -4,13 +4,12 @@ public class Test3 {
 
     public static void main(String[] args) {
 
-        int[] arr = {1, 2, 3, 4, 5,};
+        int a, b;
 
-        int[] arr2 = arr.clone();
+        a = b = 10;
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
 
-        arr[0] = 100;
-
-        System.out.println(Arrays.toString(arr2));
 
     }
 }
