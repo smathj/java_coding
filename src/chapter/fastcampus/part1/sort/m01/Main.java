@@ -1,4 +1,4 @@
-package chapter.fastcampus.part1.bruteforce.m10;
+package chapter.fastcampus.part1.sort.m01;
 
 import java.io.*;
 import java.util.Collections;
