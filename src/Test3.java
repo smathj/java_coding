@@ -4,12 +4,12 @@ public class Test3 {
 
     public static void main(String[] args) {
 
-        int a, b;
-
-        a = b = 10;
-        print(a++, b++);
-        System.out.println("[메서드 동작후]a = " + a);
-        System.out.println("[메서드 동작후]b = " + b);
+        String a = "a";
+        String b = "b";
+        String a2 = "a";
+        System.out.println(a.compareTo(b)); // 사전순 (리턴값은 음수)
+        System.out.println(b.compareTo(a)); // 역순 (리턴값은 양수)
+        System.out.println(a.compareTo(a2));    // 동일
 
     }
 
