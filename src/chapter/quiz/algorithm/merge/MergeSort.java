@@ -1,7 +1,9 @@
 package chapter.quiz.algorithm.merge;
 
-import java.util.Arrays;
 
+/**
+ *  병합 정렬
+ */
 public class MergeSort {
 
     private void mergeSort(int arr[], int start, int div, int end) {
