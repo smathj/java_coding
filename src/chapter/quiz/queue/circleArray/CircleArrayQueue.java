@@ -7,7 +7,11 @@ public class CircleArrayQueue {
 
     private Object arr[];
     private int MAX_QUEUE_SIZE;
+
+    // 시작 인덱스
     private int front = 0;
+
+    // 끝 인덱스
     private int rear = 0;
 
 
