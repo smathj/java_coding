@@ -1,4 +1,4 @@
-package chapter.fastcampus.part1.partialsum.m02;
+package chapter.fastcampus.part1.prefixsum.m02;
 
 import java.io.*;
 

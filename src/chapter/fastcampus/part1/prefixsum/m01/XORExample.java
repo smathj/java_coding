@@ -1,4 +1,4 @@
-package chapter.fastcampus.part1.partialsum.m01;
+package chapter.fastcampus.part1.prefixsum.m01;
 
 public class XORExample {
     public static void main(String[] args) {
