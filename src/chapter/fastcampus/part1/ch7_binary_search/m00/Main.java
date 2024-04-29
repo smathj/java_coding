@@ -1,4 +1,4 @@
-package chapter.fastcampus.part1.ch7_binary_search.m0;
+package chapter.fastcampus.part1.ch7_binary_search.m00;
 
 import java.io.*;
 import java.util.Arrays;

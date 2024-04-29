@@ -2,25 +2,14 @@ public class Test5 {
 
 
     public static void main(String[] args) {
-        boolean bool = false;
 
 
-        int i = 4;
+        String a1 = "aa";
+        String a2 = "ab";
 
-        if (i > 0) {
+        int i = a1.compareTo(a2);
+        System.out.println("i = " + i);
 
-            System.out.println(true ^ bool);
-        } else {
-            System.out.println(false ^ bool);
-        }
-
-        int i2 = 0;
-
-        if (i2 > 0) {
-            System.out.println(true ^ bool);
-        } else {
-            System.out.println(false ^ bool);
-        }
 
     }
 
