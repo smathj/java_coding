@@ -72,13 +72,11 @@ public class Main_T2 {
              * [이분검색]
              * 합이 0 보다 작으면
              * 왼쪽은 더 안봐도된다
-             */
-            if(sum < 0 ) l = m + 1;
-            /**
-             * [이분검색]
+             *
              * 합이 0 보다 크면
              * 오른쪽은 더 안봐도된다
              */
+            if(sum < 0 ) l = m + 1;
             else if(sum > 0) r = m - 1;
             // 0 이면 그자체가 정답이다
             else return arr[m];

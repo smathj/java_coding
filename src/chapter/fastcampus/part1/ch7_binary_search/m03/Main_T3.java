@@ -14,6 +14,7 @@ public class Main_T3 {
 
         int N = sc.nextInt();
 
+//        int ansAbs = Integer.MAX_VALUE;
         int ansAbs = 2000000001;
         int ans1 = 0;
         int ans2 = 0;
