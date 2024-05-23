@@ -64,6 +64,9 @@ public class Main_T {
 
     }
 
+    /**
+     * 윈도우 전진에 의한 앞쪽 제거
+     */
     private static void Remove(char c) {
         switch (c) {
             case 'A':
@@ -97,7 +100,9 @@ public class Main_T {
         }
     }
 
-    // 새로 들어온 문자를 처리하는 함수
+    /**
+     * 윈도우 한칸 전진
+     */
     private static void Add(char c) {
         switch (c) {
             case 'A':
