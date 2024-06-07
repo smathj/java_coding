@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
+/**
+ * DFS 깊이 우선 탐색
+ */
 public class Main_T {
 
     static int n, m, anser = 0;

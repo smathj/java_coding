@@ -3,6 +3,10 @@ package chapter.자바알고리즘문제풀이입문.recursive_tree_graph.m12;
 import java.util.Scanner;
 
 /**
+ * BFS 너비 우선 탐색
+ */
+
+/**
  * BFS
  *
  * ▣ 입력예제 1
