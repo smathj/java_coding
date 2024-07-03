@@ -1,6 +1,5 @@
 package chapter.book.quiz.linkedList;
 
-import com.sun.org.apache.xpath.internal.objects.XNull;
 
 public class CircularLinkedList {
     private Node head;  // 제일 앞 노드
