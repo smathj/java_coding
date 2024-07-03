@@ -2,6 +2,7 @@ package chapter.lecture.김영한.자바중급1편.time;
 
 
 import java.time.Duration;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class DurationMain {
@@ -27,6 +28,16 @@ public class DurationMain {
         System.out.println("차이: " + between.getSeconds() + "초");
         System.out.println("근무 시간: " + between.toHours() + "시간" + between.toMinutesPart() + "분");
 
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+        LocalDateTime startLdt = LocalDateTime.of(2024,7,4,10,20,30,111);
+        LocalDateTime endLdt = LocalDateTime.of(2024,7,4,11,20,30,111);
+        Duration between2 = Duration.between(startLdt, endLdt);
+        System.out.println("between2 = " + between2);
+        System.out.println("차이: " + between2.getSeconds() + "초");
+        System.out.println("근무 시간: " + between2.toHours() + "시간" + between2.toMinutesPart() + "분");
 
     }
 }
