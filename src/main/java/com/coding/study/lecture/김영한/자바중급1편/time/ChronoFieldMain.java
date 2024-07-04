@@ -2,6 +2,9 @@ package com.coding.study.lecture.김영한.자바중급1편.time;
 
 import java.time.temporal.ChronoField;
 
+/**
+ * 시간의 필드
+ */
 public class ChronoFieldMain {
 
     public static void main(String[] args) {
