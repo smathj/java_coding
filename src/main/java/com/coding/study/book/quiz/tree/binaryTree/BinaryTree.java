@@ -1,8 +1,5 @@
-package chapter.book.quiz.tree.binaryTree;
+package com.coding.study.book.quiz.tree.binaryTree;
 
-import chapter.book.quiz.queue.linkedlist.LinkedListQueue;
-
-import java.util.LinkedList;
 
 public class BinaryTree {
 
@@ -22,7 +19,7 @@ public class BinaryTree {
      */
     public void bfs(Node root) {
         // 앞에서 직접 만든 큐 자료형
-        LinkedListQueue queue = new LinkedListQueue();
+        chapter.book.quiz.queue.linkedlist.LinkedListQueue queue = new chapter.book.quiz.queue.linkedlist.LinkedListQueue();
 //        LinkedList<Node> nodes = new LinkedList<Node>();
 
         queue.enqueue(root);

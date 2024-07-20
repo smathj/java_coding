@@ -1,4 +1,4 @@
-package chapter.book.quiz.tree.BinarySearchTree;
+package com.coding.study.book.quiz.tree.BinarySearchTree;
 
 import chapter.book.quiz.queue.linkedlist.LinkedListQueue;
 

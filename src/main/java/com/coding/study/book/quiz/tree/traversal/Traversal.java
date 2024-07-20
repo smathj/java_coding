@@ -1,6 +1,7 @@
-package chapter.book.quiz.tree.traversal;
+package com.coding.study.book.quiz.tree.traversal;
 
-import chapter.book.quiz.tree.BinarySearchTree.Node;
+
+import com.coding.study.book.quiz.tree.BinarySearchTree.Node;
 
 public class Traversal {
 

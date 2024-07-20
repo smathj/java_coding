@@ -1,4 +1,4 @@
-package chapter.book.quiz.tree.binaryTree;
+package com.coding.study.book.quiz.tree.binaryTree;
 
 public class Node {
     private int value;

@@ -1,5 +1,7 @@
-package chapter.book.quiz.tree.binaryTree;
+package com.coding.study.book.quiz.tree.binaryTree;
 
+
+import com.coding.study.book.quiz.tree.binaryTree.BinaryTree;
 
 public class Main {
     public static void main(String[] args) {
